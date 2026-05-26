@@ -3,10 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GMC & UCP Multi-Product Testing Sandbox</title>
+    <title>GMC & UCP Comprehensive Sandbox</title>
     
     <!-- ========================================== -->
-    <!-- JSON-LD STRUCTURED DATA FOR GMC AUTOMATIC CRAWLING -->
+    <!-- GOOGLE ANALYTICS 4 & CONSENT MODE CONFIG   -->
+    <!-- ========================================== -->
+    <!-- Loaded using your active snippet ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-673MV0H55H"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      
+      // Default privacy state to 'denied' (UCP Framework Best Practice)
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'analytics_storage': 'denied',
+        'personalization_storage': 'denied'
+      });
+
+      gtag('js', new Date());
+      gtag('config', 'G-673MV0H55H');
+    </script>
+
+    <!-- ========================================== -->
+    <!-- JSON-LD METADATA FOR GMC AUTOMATIC FEED    -->
     <!-- ========================================== -->
     <script type="application/ld+json">
     [
@@ -18,10 +38,7 @@
         "description": "High-quality noise-canceling over-ear headphones perfect for testing GMC feeds.",
         "sku": "HEADPHONE-TEST-001",
         "mpn": "925872",
-        "brand": {
-          "@type": "Brand",
-          "name": "SandboxAudio"
-        },
+        "brand": { "@type": "Brand", "name": "SandboxAudio" },
         "offers": {
           "@type": "Offer",
           "priceCurrency": "USD",
@@ -29,7 +46,7 @@
           "priceValidUntil": "2027-12-31",
           "itemCondition": "https://schema.org/NewCondition",
           "availability": "https://schema.org/InStock",
-          "url": "https://example.com/products/headphones"
+          "url": "https://manques.github.io/ucp-store-front/"
         }
       },
       {
@@ -37,13 +54,10 @@
         "@type": "Product",
         "name": "Minimalist Mechanical Keyboard",
         "image": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=500",
-        "description": "Compact 75% layout mechanical keyboard with hot-swappable switches.",
+        "description": "Compact 75% layout mechanical keyboard with hot-swappable tactile switches.",
         "sku": "KEYBOARD-TEST-002",
         "mpn": "411093",
-        "brand": {
-          "@type": "Brand",
-          "name": "SandboxKeys"
-        },
+        "brand": { "@type": "Brand", "name": "SandboxKeys" },
         "offers": {
           "@type": "Offer",
           "priceCurrency": "USD",
@@ -51,7 +65,7 @@
           "priceValidUntil": "2027-12-31",
           "itemCondition": "https://schema.org/NewCondition",
           "availability": "https://schema.org/InStock",
-          "url": "https://example.com/products/keyboard"
+          "url": "https://manques.github.io/ucp-store-front/"
         }
       },
       {
@@ -59,13 +73,10 @@
         "@type": "Product",
         "name": "Ergonomic Wireless Mouse",
         "image": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500",
-        "description": "Precision wireless mouse designed to optimize comfort and daily productivity.",
+        "description": "Precision wireless mouse designed to optimize comfort and productivity loops.",
         "sku": "MOUSE-TEST-003",
         "mpn": "773194",
-        "brand": {
-          "@type": "Brand",
-          "name": "SandboxClick"
-        },
+        "brand": { "@type": "Brand", "name": "SandboxClick" },
         "offers": {
           "@type": "Offer",
           "priceCurrency": "USD",
@@ -73,7 +84,7 @@
           "priceValidUntil": "2027-12-31",
           "itemCondition": "https://schema.org/NewCondition",
           "availability": "https://schema.org/OutOfStock",
-          "url": "https://example.com/products/mouse"
+          "url": "https://manques.github.io/ucp-store-front/"
         }
       }
     ]
@@ -87,7 +98,6 @@
             --text-muted: #64748b;
             --accent: #2563eb;
             --success: #10b981;
-            --danger: #ef4444;
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -96,130 +106,35 @@
             margin: 0;
             padding: 40px 20px;
         }
-        .header {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 40px auto;
-        }
-        .catalog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-        .product-card {
-            background: var(--card-bg);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-            display: flex;
-            flex-direction: column;
-            border: 1px solid #e2e8f0;
-        }
-        .image-wrapper {
-            position: relative;
-            height: 220px;
-            background: #f1f5f9;
-        }
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .status-badge {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
+        .header { text-align: center; max-width: 800px; margin: 0 auto 40px auto; }
+        .catalog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1100px; margin: 0 auto; }
+        .product-card { background: var(--card-bg); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); display: flex; flex-direction: column; border: 1px solid #e2e8f0; }
+        .image-wrapper { position: relative; height: 200px; background: #f1f5f9; }
+        img { width: 100%; height: 100%; object-fit: cover; }
+        .status-badge { position: absolute; top: 12px; right: 12px; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
         .status-badge.instock { background: #dcfce7; color: #15803d; }
         .status-badge.outofstock { background: #fee2e2; color: #991b1b; }
-        
-        .product-info {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-        .sku { font-size: 0.75rem; color: var(--text-muted); font-weight: 600; margin-bottom: 4px; }
-        h3 { margin: 0 0 8px 0; font-size: 1.2rem; }
+        .product-info { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
+        .sku { font-size: 0.75rem; color: var(--text-muted); font-weight: 600; }
+        h3 { margin: 5px 0 8px 0; font-size: 1.2rem; }
         .desc { font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; margin-bottom: 15px; flex-grow: 1; }
-        .price-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: auto;
-            padding-top: 15px;
-            border-top: 1px solid #f1f5f9;
-        }
-        .price { font-size: 1.3rem; font-weight: 700; color: var(--text-main); }
-        .actions {
-            display: flex;
-            gap: 8px;
-            margin-top: 15px;
-        }
-        .btn {
-            flex: 1;
-            padding: 10px;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            cursor: pointer;
-            border: 1px solid #cbd5e1;
-            background: white;
-            transition: all 0.2s;
-        }
-        .btn-primary {
-            background: var(--accent);
-            color: white;
-            border: none;
-        }
-        .btn-primary:hover { background: #1d4ed8; }
-        .btn:hover:not(.btn-primary) { background: #f8fafc; }
-        
-        /* Consent Banner Container */
-        .ucp-banner {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            right: 20px;
-            background: #0f172a;
-            color: white;
-            padding: 20px;
-            border-radius: 8px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
-            z-index: 1000;
-        }
-        .ucp-btn {
-            background: var(--success);
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: 600;
-        }
+        .price-row { display: flex; justify-content: space-between; align-items: center; padding-top: 15px; border-top: 1px solid #f1f5f9; }
+        .price { font-size: 1.3rem; font-weight: 700; }
+        .actions { display: flex; gap: 8px; margin-top: 15px; }
+        .btn { flex: 1; padding: 10px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer; border: 1px solid #cbd5e1; background: white; }
+        .btn-primary { background: var(--accent); color: white; border: none; }
+        .ucp-banner { position: fixed; bottom: 20px; left: 20px; right: 20px; background: #0f172a; color: white; padding: 20px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; gap: 15px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3); z-index: 1000; }
+        .ucp-btn { background: var(--success); color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-weight: 600; }
     </style>
 </head>
 <body>
 
     <div class="header">
-        <h1>GMC & UCP Schema Integration Sandbox</h1>
-        <p>This multi-product schema template supplies targeted item structural data arrays to GMC scraper bots, alongside unified click analytics blocks compatible with Customer Profile integrations.</p>
+        <h1>GMC & UCP Ecosystem Testing Hub</h1>
+        <p>Identity processing environment linked to Firebase authentication modules and advanced tracking layers.</p>
     </div>
 
     <div class="catalog-grid">
-        
         <!-- Product 1 -->
         <div class="product-card">
             <div class="image-wrapper">
@@ -229,13 +144,11 @@
             <div class="product-info">
                 <span class="sku">SKU: HEADPHONE-TEST-001</span>
                 <h3>Premium Wireless Headphones</h3>
-                <p class="desc">High-quality noise-canceling over-ear headphones perfect for testing GMC automatic feed updates.</p>
-                <div class="price-row">
-                    <span class="price">$199.99</span>
-                </div>
+                <p class="desc">High-quality noise-canceling over-ear headphones perfect for testing GMC feeds.</p>
+                <div class="price-row"><span class="price">$199.99</span></div>
                 <div class="actions">
-                    <button class="btn" onclick="trackUcpEvent('view_item', 'HEADPHONE-TEST-001', 'Premium Wireless Headphones', 199.99)">View Details</button>
-                    <button class="btn btn-primary" onclick="trackUcpEvent('purchase', 'HEADPHONE-TEST-001', 'Premium Wireless Headphones', 199.99)">Purchase</button>
+                    <button class="btn" onclick="fireEcomEvent('view_item', 'HEADPHONE-TEST-001', 'Premium Wireless Headphones', 199.99)">View</button>
+                    <button class="btn btn-primary" onclick="fireEcomEvent('purchase', 'HEADPHONE-TEST-001', 'Premium Wireless Headphones', 199.99)">Purchase</button>
                 </div>
             </div>
         </div>
@@ -250,12 +163,10 @@
                 <span class="sku">SKU: KEYBOARD-TEST-002</span>
                 <h3>Minimalist Mechanical Keyboard</h3>
                 <p class="desc">Compact 75% layout mechanical keyboard with hot-swappable tactile switches.</p>
-                <div class="price-row">
-                    <span class="price">$129.50</span>
-                </div>
+                <div class="price-row"><span class="price">$129.50</span></div>
                 <div class="actions">
-                    <button class="btn" onclick="trackUcpEvent('view_item', 'KEYBOARD-TEST-002', 'Minimalist Mechanical Keyboard', 129.50)">View Details</button>
-                    <button class="btn btn-primary" onclick="trackUcpEvent('purchase', 'KEYBOARD-TEST-002', 'Minimalist Mechanical Keyboard', 129.50)">Purchase</button>
+                    <button class="btn" onclick="fireEcomEvent('view_item', 'KEYBOARD-TEST-002', 'Minimalist Mechanical Keyboard', 129.50)">View</button>
+                    <button class="btn btn-primary" onclick="fireEcomEvent('purchase', 'KEYBOARD-TEST-002', 'Minimalist Mechanical Keyboard', 129.50)">Purchase</button>
                 </div>
             </div>
         </div>
@@ -269,77 +180,97 @@
             <div class="product-info">
                 <span class="sku">SKU: MOUSE-TEST-003</span>
                 <h3>Ergonomic Wireless Mouse</h3>
-                <p class="desc">Precision wireless mouse designed to optimize comfort and daily productivity loops.</p>
-                <div class="price-row">
-                    <span class="price">$79.99</span>
-                </div>
+                <p class="desc">Precision wireless mouse designed to optimize comfort and productivity loops.</p>
+                <div class="price-row"><span class="price">$79.99</span></div>
                 <div class="actions">
-                    <button class="btn" onclick="trackUcpEvent('view_item', 'MOUSE-TEST-003', 'Ergonomic Wireless Mouse', 79.99)">View Details</button>
-                    <button class="btn btn-primary" style="opacity:0.5; cursor:not-allowed;" disabled>Out of Stock</button>
+                    <button class="btn" onclick="fireEcomEvent('view_item', 'MOUSE-TEST-003', 'Ergonomic Wireless Mouse', 79.99)">View</button>
+                    <button class="btn btn-primary" style="opacity:0.5; cursor:not-allowed;" disabled>Out Of Stock</button>
                 </div>
             </div>
         </div>
-
     </div>
 
-    <!-- Consent Framework UI Element -->
+    <!-- UCP Cookie Consent Simulation Banner -->
     <div class="ucp-banner" id="ucpBanner">
-        <div>
-            <strong>Universal Consent Platform (UCP):</strong> Explicit permission is required to stream conversion data fragments directly to the target behavioral tracking stack.
-        </div>
+        <div><strong>Universal Consent Platform:</strong> Grant identity streaming access to map data segments to your profile.</div>
         <button class="ucp-btn" onclick="acceptUcpConsent()">Accept Identity Tracking</button>
     </div>
 
+    <!-- ========================================== -->
+    <!-- SECURE INTERFACE TO THE GOOGLE ECOSYSTEM   -->
+    <!-- ========================================== -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+      import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+      // Filled directly with your actual dashboard credential parameters
+      const firebaseConfig = {
+        apiKey: "AIzaSyBGB39WpXScyzMsUswWCb75ITYbKBRp5ak",
+        authDomain: "ucp-gmc-sandbox.firebaseapp.com",
+        projectId: "ucp-gmc-sandbox",
+        storageBucket: "ucp-gmc-sandbox.firebasestorage.app",
+        messagingSenderId: "975817867185",
+        appId: "1:975817867185:web:b0d1c072e5f5d76788c790",
+        measurementId: "G-673MV0H55H"
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      // Sign in user anonymously behind the scenes to start profiling behavioral data
+      signInAnonymously(auth).catch((error) => console.error("Firebase Auth Exception:", error));
+
+      // Watch for the authenticated user ID and link it to the data pipeline
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          window.currentUcpUid = user.uid;
+          console.log("🔗 Firebase Identity established. Profile Identifier: ", user.uid);
+          
+          // Stream this user ID straight into your Google Analytics user configuration properties
+          gtag('set', 'user_properties', { 'ucp_uid': user.uid });
+        }
+      });
+    </script>
+
     <script>
-        // Global DataLayer Initialization (Matches Google Tag Manager / Segment conventions)
-        window.dataLayer = window.dataLayer || [];
-        
-        // Tracking State Guard
         let trackingConsentGranted = false;
 
         function acceptUcpConsent() {
             trackingConsentGranted = true;
             document.getElementById('ucpBanner').style.display = 'none';
             
-            // Push structured consent state into your tracking platform
-            window.dataLayer.push({
-                'event': 'consent_updated',
-                'ucp_status': 'granted',
-                'timestamp': new Date().toISOString()
+            // Core UCP Action: Signal GA4 that tracking is now permitted
+            gtag('consent', 'update', {
+              'ad_storage': 'granted',
+              'analytics_storage': 'granted',
+              'personalization_storage': 'granted'
             });
-            console.log("UCP Consent Status: GRANTED. Pipeline initialized.");
+
+            console.log("UCP Consent Status: GRANTED. Data layer pipelines completely unrestricted.");
         }
 
-        // Unified Event Logging Engine 
-        function trackUcpEvent(eventType, id, name, price) {
+        function fireEcomEvent(eventType, id, name, price) {
             if (!trackingConsentGranted) {
-                alert("Action blocked by safety policy: Please accept the UCP Identity Tracking consent banner first.");
+                alert("Action Blocked: Consent framework has tracking disabled.");
                 return;
             }
 
-            const eventPayload = {
-                'event': eventType,
-                'ecommerce': {
-                    'currency': 'USD',
-                    'value': price,
-                    'items': [{
-                        'item_id': id,
-                        'item_name': name,
-                        'price': price,
-                        'quantity': 1
-                    }]
-                },
-                'ucp_identity': {
-                    'environment': 'sandbox_testing_environment',
-                    'session_id': 'sess_' + Math.random().toString(36).substr(2, 9)
-                }
-            };
+            // Stream standard GA4 e-commerce payload
+            gtag("event", eventType, {
+                currency: "USD",
+                value: price,
+                items: [{
+                    item_id: id,
+                    item_name: name,
+                    price: price,
+                    quantity: 1
+                }],
+                // Anchor behavioral history directly to our unique Firebase tracking identifier
+                custom_user_id_dimension: window.currentUcpUid || "anonymous_session"
+            });
 
-            // Stream structured data directly into the global layer
-            window.dataLayer.push(eventPayload);
-            
-            console.log(`UCP Target Event Streamed successfully: [${eventType}]`, eventPayload);
-            alert(`Event [${eventType}] pushed down the UCP pipeline. Check your browser console.`);
+            console.log(`Pushed tracking stream [${eventType}] successfully for item: ${id}`);
+            alert(`Event [${eventType}] dispatched to Google Analytics! Check your Realtime console.`);
         }
     </script>
 </body>
